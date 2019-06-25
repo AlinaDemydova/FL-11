@@ -11,7 +11,7 @@
 }
 
 * {
-	font-family: 'Hind', sans-serif;
+	font-family: $mainFont;
 	padding: 0px;
 	margin: 0px;
 	line-height: 1.5;
@@ -94,12 +94,13 @@ button {
 .section {
 	width: 1300px;
 	margin: auto;
-	.section_text {
+	&_text {
 		font-size: 46px;
 		font-weight: 600;
 		text-align: center;
 		margin: 38px 0 18px 0;
 		color: $textColor;
+		font-family: $headingFont;
 		position: relative;
 		z-index: 1;
 		&:after {
@@ -127,22 +128,23 @@ button {
 		width: 30%;
 		position: relative;
 		z-index: -2;
-	}
-	.section_card_img {
-		width: 100%;
-		border-radius: 8px;
-	}
-	.section_card_heading {
-		font-size: 24px;
-		font-family: 'Source Sans Pro', sans-serif;
-		text-align: center;
-		font-weight: 600;
-		margin: 3px 0 15px 0;
-		color: $lightHeaderColor;
+		img {
+			width: 100%;
+			border-radius: 8px;
+		}
+		p.section_card_heading {
+			font-size: 24px;
+			font-family: 'Source Sans Pro', sans-serif;
+			text-align: center;
+			font-weight: 600;
+			margin: 3px 0 15px 0;
+			color: $lightHeaderColor;
+		}
 	}
 	.section_card_text {
 		text-align: center;
 		color: $lightTextColor;
+		line-height: $lineHeight;
 	}
 }
 

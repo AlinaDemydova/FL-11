@@ -1,15 +1,14 @@
-/*
- * Feel free to change name of colors if you need it
- * Feel free to add new colors if you need it
- */
- * {
+* {
   margin: 0;
   padding: 0;
- }
+}
 body {
   font-family: roboto;
   max-width: 1400px;
   background-color: #0b192f;
+}
+.burger-menu {
+  display: none;
 }
 .container {
   width: 73%;
@@ -50,16 +49,15 @@ header {
 article, .posts_news {
   display: flex;
 }
-article:nth-child(odd) {
+article:nth-child(even) {
   flex-direction: row-reverse;
 }
 aside {
-  width: 55%;
+  width: 120%;
   margin-left: 18px;
 }
 .img_aside {
   width: 100%;
-
 }
 .news {
   background-color: #fff;
@@ -88,42 +86,28 @@ article>img:hover, .post_text:hover {
 .post_text, article>img {
   width: 50%;
 }
-.post_text:last-child {
+.post_text {
   width: 100%;
+}
+article:last-child {
+  padding-top: 5px;
 }
 .post_text {
   color: #fff;
+  display: flex;
 }
-.post_text:nth-child(odd) {
+article:nth-child(even) .post_text {
+  flex-direction: row-reverse;
   text-align: right;
 }
-.post_text:nth-child(odd) .date {
-  float: left;
-}
-.post_text:nth-child(odd) > h2 {
-  display: inline;
-  float: right;
-  margin-right: 30px;
-}
-.post_text:nth-child(odd) p {
-  display: block;
-  float: right;
-  margin-right: 30px;
-}
-.post_text>span {
-  float: right;
-  font-size: 36px;
+.date {
+  opacity: 0.4;
+  margin: 10px;
+  font-size: 32px;
   font-weight: 100;
 }
-h2, h2+p {
-  width: 70%;
-}
-.date {
- opacity: 0.4;
- margin: 10px;
-}
-.date>span {
-  font-size: 20px;
+.date>p {
+  font-size: 18px;
 }
 br {
   padding: 0;
@@ -132,17 +116,21 @@ br {
 h2 {
   font-weight: 100;
   font-size: 34px;
-  width: 50%;
-  margin: 20px 0px 10px 26px;
+  line-height: 32px;
+  margin-bottom: 10px;
 }
 h2+p {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 100;
-  margin-left: 26px;
-  line-height: 18px;
+  line-height: 14px;
   opacity: 0.7;
 }
-
+article:nth-child(odd) .post_text div:first-child {
+  margin: 20px 0px 0px 26px;
+}
+article:nth-child(even) .post_text div:first-child {
+  margin: 20px 26px 0px 0px;
+}
 .post-1 {
   background: #B71757;
 }
@@ -157,9 +145,6 @@ h2+p {
 }
 .post-5 {
   background: #2d95bb;
-}
-.articles {
-  width: 180%;
 }
 footer {
   display: flex;
@@ -182,33 +167,90 @@ footer p:last-child {
   background-color: #b8b8b8;
   cursor: pointer;
 }
-
-@media screen and (max-width: 768px) {
-  article {
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .burger-menu, header, .post_text, article {
     display: block;
   }
+  .burger-menu {
+    padding-top: 20px;
+  }
+  header {
+    height: 100%;
+  }
+  .date {
+    text-align: center;
+  }
+  .logo, .burger-menu {
+    text-align: center;
+  }
   .container {
-  width: 97%;
-  margin: auto;
-}
-
-.articles {
-  width: 90%;
-}
-h3 {
-  font-size: 14px;
-}
-h3+p {
-  font-size: 8px;
-  line-height: 12px;
-}
-.news {
-  padding: 18px;
-}
-article>img {
-  width: 100%;
-}
+    width: 97%;
+    margin: auto;
+  }
+  article:nth-child(even) .post_text div:first-child {
+    margin: 20px 0px 0px 26px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  h3+p {
+    font-size: 8px;
+    line-height: 12px;
+  }
+  .news {
+    padding: 18px;
+  }
+  article>img {
+    width: 100%;
+  }
+  .post_text div:first-child {
+    text-align: left;
+  }
 }
 @media screen and (max-width: 480px) {
-
+  .nav {
+    display: none;
+  }
+  .container {
+    width: 97%;
+    margin: auto;
+  }
+  article>img {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+    margin: 0;
+  }
+  .burger-menu, header, .post_text, article {
+    display: block;
+  }
+  .date {
+    text-align: center;
+  }
+  article:nth-child(even) .post_text div:first-child {
+    margin: 20px 26px 0px 26px;
+    text-align: left;
+  }
+  article:nth-child(odd) .post_text div:first-child {
+  margin: 20px 26px 0px 26px;
+}
+  .burger-menu {
+    padding-top: 20px;
+  }
+  header {
+    height: 100%;
+  }
+  .logo, .burger-menu {
+    text-align: center;
+  }
+  .posts_news {
+    display: block;
+  }
+  footer {
+    height: 100%;
+  }
 }

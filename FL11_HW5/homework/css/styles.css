@@ -12,6 +12,7 @@ body {
 }
 .container {
   width: 73%;
+  max-width: 1400px;
   margin: auto;
 }
 header {
@@ -204,7 +205,9 @@ footer p:last-child {
     padding: 18px;
   }
   article>img {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
   }
   .post_text div:first-child {
     text-align: left;

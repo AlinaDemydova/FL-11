@@ -14,10 +14,16 @@ function reverseNumber(num) {
 		let lastNumber = num%i;
 		newNumber += lastNumber;
 		num = (num - num%i)/10;
-	}
 
-	return newNumber;
+		if(num === 10) {
+			newNumber += 1;
+			return +newNumber;
+		}
+	}
+	return +newNumber;
 }
+alert(reverseNumber(1000));
 alert(reverseNumber(345));
 alert(reverseNumber(-345));
 alert(reverseNumber(0));
+

@@ -1,9 +1,12 @@
+let maxHP = 100;
+const HUNDRED = 100;
+
 class Fighter {
 	constructor(name, damage, hp, agility, win = 0, lose = 0) {
 		this._name = name; 
-		this._damage = damage; // урон
-		this._hp = hp; // здоровье
-		this._agility = agility; // ловкость
+		this._damage = damage;
+		this._hp = hp;
+		this._agility = agility;
 		this._win = win;
 		this._lose = lose;
 	}
@@ -38,9 +41,9 @@ class Fighter {
 	}
 
 	attack(defender) {
-		let posibbleAttack = 100 - defender.getAgility(); // 75(%)
-		if(Math.random()*100 < posibbleAttack) {
-			defender.dealDamage(defender);
+		let posibbleAttack = HUNDRED - defender.getAgility();
+		if(Math.random()*HUNDRED < posibbleAttack) {
+			this.dealDamage(defender);
 			console.log(`${this.getName()} make ${this.getDamage()} damage to ${defender.getName()}`);
 		} else {
 			console.log(`no damage`);
@@ -61,8 +64,8 @@ class Fighter {
 		console.log(`${fighter.getName()} win!`)
 	}
 	addLose(defender) {
-		defender.setWin(defender.getWin() + 1);
-		console.log(`${defender.getName()} lose`)
+		defender.setLose(defender.getLose() + 1);
+		console.log(`${defender.getName()} lose:(`)
 	}
 	dealDamage(defender) {
 		if(defender.getHp() - this.getDamage() >= 0) {
@@ -77,22 +80,22 @@ class Fighter {
 }
 
 function battle(fighter, defender) {
-	do {
+	do {	
+		fighter.attack(defender);
 		if(defender.getHp() === 0) {
 			fighter.addWin(fighter);
 			defender.addLose(defender);
+			fighter.logCombatHistory(fighter);
+			defender.logCombatHistory(defender);
 			return;
 		}
-		fighter.attack(defender);
 		let temp = fighter;
 		fighter = defender;
 		defender = temp;
 	} while (defender.getHp() > 0)
 }
 
-let maxHP = 100;
-
-let my1Fighter = new Fighter('John', 20, 100, 25);
-let my2Fighter = new Fighter('Mike', 30, 100, 30);
-battle(my1Fighter, my2Fighter);
+// let my1Fighter = new Fighter('John', 20, 100, 25);
+// let my2Fighter = new Fighter('Mike', 30, 100, 30);
+// battle(my1Fighter, my2Fighter);
 

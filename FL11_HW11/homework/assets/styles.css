@@ -1,0 +1,87 @@
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ button {
+ 	padding: 0;
+ 	border: none;
+ 	font: inherit;
+ 	color: inherit;
+ 	background-color: transparent;
+ 	width: 32px;
+ 	height: 32px;
+ }
+ body {
+ 	margin-left: 20%;
+ 	margin-right: 20%;
+ }
+ h1 {
+ 	text-align: center;
+ 	padding-top: 15px;
+ }
+ #of10 {
+ 	color: red;
+ 	text-align: center;
+ 	font-weight: 800;
+ 	padding-top: 15px;
+ 	font-size: 20px;
+ 	padding-bottom: 10px;
+ 	display: none;
+ }
+ input:checked {
+ 	pointer-events: none;
+ }
+ #text {
+ 	width: calc(100% - 85px);
+ 	height: 20px;
+ 	border-radius: 3px;
+ 	border: 1px solid lightgray;
+ 	background-color: azure;
+ 	font-size: 13px;
+ 	padding: 10px 10px 10px 30px;
+ }
+ .spanLiText {
+ 	margin-right: 10px;
+ }
+ ul {
+ 	list-style-type: none;
+ 	width: 100%;
+ }
+ .input_and_button {
+ 	width: 100%;
+ }
+ input.checkboxLi {
+ 	width: 25px;
+ 	height: 25px;
+ 	margin-bottom: 10px;
+ 	margin-right: 20px;
+ 	vertical-align: middle;
+ }
+ li {
+ 	height: 38px;
+ 	padding: 6px 1px 6px 20px;
+ 	line-height: 35px;
+ 	border: 1px solid lightgray;
+ 	border-radius: 3px;
+ 	font-size: 20px;
+ 	margin-top: 5px;
+ }
+ .areaEdit {
+ 	height: 32px;
+ 	border: 1px solid gray;
+ 	border-radius: 3px;
+ 	float: left;
+ 	width: 35%;
+ }
+ .buttonDeleteClass {
+ 	float: right;
+ }
+ #buttonPlus {
+ 	width: 40px;
+ 	height: 40px;
+ 	float: right;
+ }
+ .material-icons {
+ 	color: #5b9ec7;
+ 	font-size: 32px;
+ }

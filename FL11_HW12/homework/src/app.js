@@ -79,14 +79,14 @@ function compareHash() {
 	}
 }
 
-buttonAddTask.onclick = () => {
+buttonAddTask.onclick = function(){
     location.hash = '#/addTask';
 }
 saveChanges.onclick = function() {
     location.hash = '#/taskList';
     createRow();
 }
-butAddTask.onclick = () => {
+butAddTask.onclick = function() {
     location.hash = '#/addTask';
 }
 
